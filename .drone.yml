@@ -9,13 +9,13 @@ steps:
   - name: Packer - Build
     image: hashicorp/packer
     commands:
-      - packer build -var aws_access_key='${aws_access_key}' -var aws_secret_key='${aws_secret_key}' -var-file=default.json packer.json
+      - packer build -var aws_access_key='${{ aws_access_key }}' -var aws_secret_key='${{ aws_secret_key }}' -var-file=default.json packer.json
     environment:
-      aws_access_key:
+      AWS_ACCESS_KEY_KEY:
         from_secret: aws_access_key
-      aws_secret_key:
+      AWS_SECRET_KEY_KEY:
         from_secret: aws_secret_key
-      aws_subnet_id:
+      AWS_SUBNET_ID_KEY:
         from_secret: aws_subnet_id
-      aws_vpc_id:
+      AWS_VPC_ID_KEY:
         from_secret: aws_vpc_id

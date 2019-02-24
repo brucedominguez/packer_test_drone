@@ -1,0 +1,19 @@
+{
+  "aws_access_key": "",
+  "aws_secret_key": "",
+  "aws_subnet_id": "subnet-086a486f",
+  "aws_vpc_id": "vpc-74592413",
+  "aws_region": "ap-southeast-2",
+  "aws_instance_type": "t2.micro",
+  "aws_associate_public_ip_address": "true",
+  "aws_ena_support": "false",
+  "aws_spot_price": "0",
+  "aws_spot_price_auto_product": "",
+  "upgrade": "true",
+  "owner": "Bruce",
+  "project": "jenkins-ci-dev",
+  "role":"continuous",
+  "subrole": "integration",
+  "image": "Gold",
+  "environment": "Dev"
+}

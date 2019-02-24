@@ -1,0 +1,27 @@
+kind: pipeline
+name: default
+
+steps:
+  - name: Packer
+    image: kayako/drone-packer
+    target: packer.json
+    variables:
+      name: packer
+      version: 33
+      aws_region: ap-southeast-2
+      aws_instance_type: t2.micro
+      aws_associate_public_ip_address: true
+      aws_ena_support: false
+      aws_spot_price: 0
+      upgrade: true
+      owner: Bruce
+      project: jenkins-ci-dev
+      role: continuous
+      subrole: integration
+      image: Gold
+      environment: Dev
+    secret_variables: [ aws_access_key, aws_secret_key, aws_subnet_id, aws_vpc_id]
+    secrets: [ aws_access_key, aws_secret_key, aws_subnet_id, aws_vpc_id]
+    actions:
+      - validate
+      - build

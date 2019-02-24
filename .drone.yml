@@ -4,7 +4,8 @@ name: default
 steps:
   - name: Packer
     image: appleboy/drone-packer
-    template: packer.json
+    template: 
+      - packer.json
     vars_files:
       - default.json
     secret_variables: [ aws_access_key, aws_secret_key, aws_subnet_id, aws_vpc_id]

@@ -1,5 +1,5 @@
 kind: pipeline
-name: default
+name: Packer_Build
 
 steps:
   - name: Packer - Validate
@@ -9,7 +9,7 @@ steps:
   - name: Packer - Build
     image: hashicorp/packer
     commands:
-      - packer validate -var-file=default.json packer.json
+      - packer build -var-file=default.json packer.json
     environment:
       aws_access_key:
         from_secret: aws_access_key

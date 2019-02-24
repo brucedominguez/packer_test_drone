@@ -1,7 +1,7 @@
 {
   "variables": {
-    "aws_access_key": "",
-    "aws_secret_key": "",
+    "aws_access_key": null,
+    "aws_secret_key": null,
     "aws_subnet_id": null,
     "aws_vpc_id": null,
     "aws_region": null,

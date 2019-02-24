@@ -2,10 +2,20 @@ kind: pipeline
 name: default
 
 steps:
-  - name: Packer
+  - name: Packer - Validate
     image: hashicorp/packer
     commands:
       - packer validate -var-file=default.json packer.json
-      - packer build -var-file=default.json packer.json
-    secret_variables: [ aws_access_key, aws_secret_key, aws_subnet_id, aws_vpc_id]
-    secrets: [ aws_access_key, aws_secret_key, aws_subnet_id, aws_vpc_id]
+  - name: Packer - Build
+    image: hashicorp/packer
+    commands:
+      - packer validate -var-file=default.json packer.json
+    environment:
+      aws_access_key:
+        from_secret: aws_access_key
+      aws_secret_key:
+        from_secret: aws_secret_key
+      aws_subnet_id:
+        from_secret: aws_subnet_id
+      aws_vpc_id:
+        from_secret: aws_vpc_id

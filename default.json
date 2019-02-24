@@ -1,6 +1,4 @@
 {
-  "aws_access_key": "",
-  "aws_secret_key": "",
   "aws_subnet_id": "subnet-086a486f",
   "aws_vpc_id": "vpc-74592413",
   "aws_region": "ap-southeast-2",

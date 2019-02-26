@@ -29,7 +29,7 @@
   "builders": [{
     "type": "amazon-ebs",
     "profile": "{{user `profile`}}",
-    "region": "{{user `region`}}",
+    "region": "ap-southeast-2",
     "source_ami_filter": {
       "filters": {
         "virtualization-type": "hvm",
